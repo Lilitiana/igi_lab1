@@ -9,9 +9,10 @@ namespace Lab_1
 {
     public class SPASalonContext:DbContext
     {
-        public DbSet<Action> Actions { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<TypeOfService> TypeOfServices { get; set; }
+        public DbSet<CustomerService> CustomerServices { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptions)
         {

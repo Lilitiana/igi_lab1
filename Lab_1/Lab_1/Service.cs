@@ -12,6 +12,6 @@ namespace Lab_1
         public string Description { get; set; }
         public double Cost { get; set; }
         public TypeOfService TypeOfService { get; set; }
-        public Action action { get; set; }
+        public List<CustomerService> CustomerServices { get; set; }
     }
 }

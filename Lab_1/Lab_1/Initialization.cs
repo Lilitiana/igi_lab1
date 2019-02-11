@@ -40,11 +40,21 @@ namespace Lab_1
             db.Services.AddRange(new Service[] { service1, service2, service3, service4, service5, service6, service7, service8, service9, service10, service11, service12, service13, service14, service15 });
             db.SaveChanges();
 
-            Action action1 = new Action { Name = "Скидка на релаксирующий массаж", ServiceID = service12.TypeOfServiceID, DiscountPrice=21 };
-            Action action2 = new Action { Name = "Скидка на наращивание ногтей", ServiceID = service13.TypeOfServiceID, DiscountPrice =8 };
-            Action action3 = new Action { Name = "Скидка на стрижку", ServiceID = service1.TypeOfServiceID, DiscountPrice = 19.5 };
-            Action action4 = new Action { Name = "Скидка на пиллинг", ServiceID = service8.TypeOfServiceID, DiscountPrice = 12 };
-            db.Actions.AddRange(new Action[] { action1, action2, action3, action4 });
+            Customer customer1 = new Customer { FullName = "Александрова Екатерина Анатольевна", PhoneNumber = "375447856245 ", TotalCost = 60 };
+            Customer customer2 = new Customer { FullName = "Попичева Арина Валерьевна", PhoneNumber = "37544788145 ", TotalCost = 26 };
+            Customer customer3 = new Customer { FullName = "Мазиков Максим Викторович", PhoneNumber = "375447126205 ", TotalCost = 36 };
+            db.Customers.AddRange(new Customer[] { customer1, customer2, customer3 });
+            db.SaveChanges();
+
+            DateTime date = new DateTime(2019, 7, 20);
+            CustomerService customerService1 = new CustomerService { Service = service1, Customer = customer1, Date = date };
+            CustomerService customerService2 = new CustomerService { Service = service2, Customer = customer1, Date = date };
+            date = new DateTime(2019, 3, 11);
+            CustomerService customerService3 = new CustomerService { Service = service10, Customer = customer2, Date = date };
+            date = new DateTime(2019, 4, 22);
+            CustomerService customerService4 = new CustomerService { Service = service8, Customer = customer3, Date = date };
+            CustomerService customerService5 = new CustomerService { Service = service9, Customer = customer3, Date = date };
+            db.CustomerServices.AddRange(new CustomerService[] { customerService1, customerService2, customerService3, customerService4, customerService5 });
             db.SaveChanges();
         }
     }

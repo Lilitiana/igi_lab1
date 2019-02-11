@@ -9,6 +9,6 @@ namespace Lab_1
         public  int TypeOfServiceID { get; set; }
         public  string Name { get; set; }
         public string Description { get; set; }
-        public List<Service> services { get; set; }
+        public List<Service> Services { get; set; }
     }
 }
